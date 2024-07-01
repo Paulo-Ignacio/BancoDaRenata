@@ -22,8 +22,8 @@ Gerar extrato GRUPO 3 - CAROLINE, GUSTAVO, RAFAEL
 Editar usuário GRUPO 3 - CAROLINE, GUSTAVO, RAFAEL
 
 Fechar Conta - GRUPO 2 - HELOISA, PEDRO, KAILÃ
-
 - Função para excluir um usuário e sua conta do sistema.
+  
 Consultar Saldo GRUPO 2 - HELOISA, PEDRO, KAILAN
 - Função para consultar o saldo de um usuário sem gerar o extrato completo.
 
