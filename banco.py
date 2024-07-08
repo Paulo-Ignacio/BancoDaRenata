@@ -46,7 +46,7 @@ def gerar_extrato(cpf):
         print(f"Extrato da conta de {usuarios[cpf]['nome']} (CPF: {usuarios[cpf]['cpf']}):")
         for item in contas[cpf]["extrato"]:
             print(item)
-        print(f"Saldo atual: R${contas[cpf]['saldo']:.2f}")
+            print(f"Saldo atual: R${contas[cpf]['saldo']:.2f}")
     else:
         print("Usuário não encontrado.")
 
@@ -58,20 +58,43 @@ def editar_usuario(cpf):
     else:
         print("Usuário não encontrado.")
 
-# Adicione a função fechar_conta aqui
-# Adicione a função consultar_saldo aqui
 
-# Cadastro de usuários (exemplo)
-cadastrar_usuario("João", "12345678900")
-cadastrar_usuario("Maria", "09876543211")
+while True:
 
-# Realizar algumas operações (exemplo)
-depositar("12345678900", 1000.0)
-sacar("12345678900", 200.0)
-transferir("12345678900", "09876543211", 300.0)
-
-# Gerar extratos (exemplo)
-gerar_extrato("12345678900")
-print()
-gerar_extrato("09876543211")
-
+    print("""MENU:
+         1 - Cadastrar usuário
+         2 - Depositar
+         3 - Sacar
+         4 - Transferir
+         5 - Gerar extrato
+         6 - Editar usuário
+         7 - Fechar conta
+         8 - Consultar saldo
+         9 - Sair""")
+    opc = int(input("Escolha a opção:"))
+    if opc == 1:
+        nome = input("Digite o nome do usuário: ")
+        cpf = input("Digite o seu CPF: ")
+        cadastrar_usuario(nome, cpf)
+    elif opc == 2:
+        cpf = input("Digite o CPF do usuário: ")
+        valor = float(input("Digite o valor do depósito: "))
+        depositar(cpf, valor)
+        print(f"Deposito de {valor}R$ efetuado com sucesso!")
+       #print(contas[cpf]["saldo"])
+    #elif opc == 3:
+    
+    #elif opc == 4:
+    
+    #elif opc == 5:
+    
+    #elif opc == 6:
+    
+    #elif opc == 7:
+    
+    #elif opc == 8:
+    
+    #elif opc == 9:
+    
+    #else:
+    #print("Escolha uma opção válida!")
