@@ -104,7 +104,7 @@ while True:
                 cpf = int(input("Digite o CPF do usuário: "))
                 if cpf in usuarios:
                     editar_usuario(cpf)
-                    opc = int(input("\nDeseja editar ou usuário? Digite 1 para SIM ou 2 para NÃO: "))
+                    opc = int(input("\nDeseja editar outro usuário? Digite 1 para SIM ou 2 para NÃO: "))
                     if opc == 2:
                         break
                 else:
