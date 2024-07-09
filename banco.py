@@ -89,10 +89,26 @@ while True:
         transferir(transferencia_origem, transferencia_destino, valor_transf)
 
     elif opcao == '5':
-        pass
+        while True:
+                cpf = int(input("Digite o CPF do usuário: "))
+                if cpf in contas:
+                    gerar_extrato(cpf)
+                    opc = int(input("\nDeseja ver outro extrato? Digite 1 para SIM ou 2 para NÃO: "))
+                    if opc == 2:
+                        break
+                else:
+                    print("Usuário não encontrado, digite o CPF novamente!")
         
     elif opcao == '6':
-        pass
+        while True:
+                cpf = int(input("Digite o CPF do usuário: "))
+                if cpf in usuarios:
+                    editar_usuario(cpf)
+                    opc = int(input("\nDeseja editar ou usuário? Digite 1 para SIM ou 2 para NÃO: "))
+                    if opc == 2:
+                        break
+                else:
+                    print("Usuário não encontrado, digite o CPF novamente!")
         
     elif opcao == '7':
         pass
