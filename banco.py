@@ -58,20 +58,45 @@ def editar_usuario(cpf):
     else:
         print("Usuário não encontrado.")
 
-# Adicione a função fechar_conta aqui
-# Adicione a função consultar_saldo aqui
+while True:
+    print('>>>>>>MENU<<<<<<')
+    print('1. Cadastrar usuário')
+    print('2. Depositar')
+    print('3. Sacar')
+    print('4. Transferir')
+    print('5. Gerar extrato')
+    print('6. Editar usuário')
+    print('7. Sair')
 
-# Cadastro de usuários (exemplo)
-cadastrar_usuario("João", "12345678900")
-cadastrar_usuario("Maria", "09876543211")
+    opcao = input('Digite a opção.')
+        
+    if opcao == '1':
+        pass
+        
+    elif opcao == '2':
+        pass
+        
+    elif opcao == '3':
+        pedir_cpf = input('Infome seu CPF: ')
+        valor_sacado = float(input('Digite o valor para ser sacado: '))
+        sacar(pedir_cpf, valor_sacado)
+        
+    elif opcao == '4':
+        valor_transf = float(input("Digite o valor a ser transferido: "))
+        transferencia_origem = str(input('Digite seu CPF: '))
+        transferencia_destino = str(input('Digite o CPF destino: '))
+        
+        transferir(transferencia_origem, transferencia_destino, valor_transf)
 
-# Realizar algumas operações (exemplo)
-depositar("12345678900", 1000.0)
-sacar("12345678900", 200.0)
-transferir("12345678900", "09876543211", 300.0)
+    elif opcao == '5':
+        pass
+        
+    elif opcao == '6':
+        pass
+        
+    elif opcao == '7':
+        pass
 
-# Gerar extratos (exemplo)
-gerar_extrato("12345678900")
-print()
-gerar_extrato("09876543211")
-
+    else:
+        break
+    
