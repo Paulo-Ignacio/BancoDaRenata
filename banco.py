@@ -1,4 +1,4 @@
-## Dicionário para armazenar usuários
+# Dicionário para armazenar usuários
 usuarios = {}
 
 # Dicionário para armazenar contas correntes
@@ -58,45 +58,76 @@ def editar_usuario(cpf):
     else:
         print("Usuário não encontrado.")
 
-while True:
-    print('>>>>>>MENU<<<<<<')
-    print('1. Cadastrar usuário')
-    print('2. Depositar')
-    print('3. Sacar')
-    print('4. Transferir')
-    print('5. Gerar extrato')
-    print('6. Editar usuário')
-    print('7. Sair')
-
-    opcao = input('Digite a opção.')
-        
-    if opcao == '1':
-        pass
-        
-    elif opcao == '2':
-        pass
-        
-    elif opcao == '3':
-        pedir_cpf = input('Infome seu CPF: ')
-        valor_sacado = float(input('Digite o valor para ser sacado: '))
-        sacar(pedir_cpf, valor_sacado)
-        
-    elif opcao == '4':
-        valor_transf = float(input("Digite o valor a ser transferido: "))
-        transferencia_origem = str(input('Digite seu CPF: '))
-        transferencia_destino = str(input('Digite o CPF destino: '))
-        
-        transferir(transferencia_origem, transferencia_destino, valor_transf)
-
-    elif opcao == '5':
-        pass
-        
-    elif opcao == '6':
-        pass
-        
-    elif opcao == '7':
-        pass
-
+def fechar_conta(cpf):
+    if cpf in usuarios:
+        usuarios.pop(cpf)
+        contas.pop(cpf)
+        print(f"Usuário com CPF {cpf} foi deletado com sucesso.")
     else:
+        print(f"Usuário com CPF {cpf} não encontrado.")
+
+def consulta_saldo(cpf):
+    if cpf in contas:
+        saldo = contas[cpf]["saldo"]
+        return print(f"O seu saldo atual é: R${saldo: .2f}")
+    else:
+        print("Usuário não encontrado.")
+        return None
+# Adicione a função fechar_conta aqui
+# Adicione a função consultar_saldo aqui
+
+# Cadastro de usuários (exemplo)
+cadastrar_usuario("João", "12345678900")
+cadastrar_usuario("Maria", "09876543211")
+
+# Realizar algumas operações (exemplo)
+depositar("12345678900", 1000.0)
+sacar("12345678900", 200.0)
+transferir("12345678900", "09876543211", 300.0)
+
+# Gerar extratos (exemplo)
+gerar_extrato("12345678900")
+print()
+gerar_extrato("09876543211")
+
+
+print(usuarios)
+
+print("""MENU:
+         1 - Cadastrar usuário
+         2 - Depositar
+         3 - Sacar
+         4 - Transferir
+         5 - Gerar extrato
+         6 - Editar usuário
+         7 - Fechar conta
+         8 - Consultar saldo
+         9 - Sair""")
+while True:
+    opc = int(input("Escolha a opção:"))
+    if opc == 1:
+        pass
+    elif opc == 2:
+        pass
+    elif opc == 3:
+        pass
+    elif opc == 4:
+        pass
+    elif opc == 5:
+        pass
+    elif opc == 6:
+        pass
+    elif opc == 7:
+        deletar = input("digite o cpf para o fechamento da conta: ")
+        fechar_conta(deletar)
+    elif opc == 8:
+        consulta_cpf = input("Digite o cpf para a consulta de saldo: ")
+        consulta_saldo(consulta_cpf)
+    elif opc == 9:
+        print("Programa encerrado!")
         break
-    
+    else:
+        print("Escolha uma opção válida!")
+
+
+
