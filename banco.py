@@ -1,4 +1,4 @@
-# Dicionário para armazenar usuários
+## Dicionário para armazenar usuários
 usuarios = {}
 
 # Dicionário para armazenar contas correntes
